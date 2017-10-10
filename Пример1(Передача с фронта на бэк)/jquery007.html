@@ -1,0 +1,30 @@
+﻿<html>                                                                  
+<head>                                                              
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script type="text/javascript">   
+$(document).ready(function(){
+
+$("#send").click(function(){
+
+ $("#status").load("example1.php","name="+$("#name").val()+"&email="+$("#email").val()+"&text="+$("#text").val()); /* Так мы собираем данные из форм и сразу отправляем! */
+
+})
+
+});             
+</script> 
+                                                     
+</head>
+<body> 
+
+Сюда загрузятся данные с сервера:<p id="status"></p>
+
+Имя
+<p><input id="name" name="name"></p>
+Email
+<p><input id="email" name="email"></p>
+Текст
+<p><textarea rows="5" id="text" name="text"></textarea></p>
+<input id="send" type="button" value="Передать данные скрипту" />
+</body>
+</html>
