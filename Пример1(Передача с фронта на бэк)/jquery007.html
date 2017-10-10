@@ -8,8 +8,12 @@ $(document).ready(function(){
 
 $("#send").click(function(){
 
- $("#status").load("example1.php","name="+$("#name").val()+"&email="+$("#email").val()+"&text="+$("#text").val()); /* Так мы собираем данные из форм и сразу отправляем! */
+var Res = confirm('Ok?');
 
+if(Res){
+ $("#status").load("example1.php","name="+$("#name").val()+"&email="+$("#email").val()+"&text="+$("#text").val()); /* Так мы собираем данные из форм и сразу отправляем! */
+}
+else alert('Отказ');
 })
 
 });             
