@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2002/REC-xhtml1-20020801/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery для начинающих. Часть 3. AJAX. Функция getJSON</title>
+    <meta name="keywords" content="ajax, jquery, javascript, JSON" />
+    <meta name="description" content="jQuery library, AJAX. getJSON Function" />
+    <script type="text/javascript" src="javascript/jquery-1.2.6.js"></script>
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />	
+    <style>
+    body { width: 600px; margin:2px auto}    
+    </style> 
+</head>
+<body>
+         <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery('#example-4').click(function(){
+                    jQuery.getJSON('example.json', {}, function(json){
+                        jQuery('#example-4').html('');
+                        jQuery('#example-4').append('To: '   + json.note.to + '<br/>')
+                                            .append('From: ' + json.note.from + '<br/>')
+                                            .append('<b>'    + json.note.heading + '</b><br/>')
+                                            .append(           json.note.body + '<br/>');
+                    });                
+                })
+            });
+        </script>   
+        <div class="example cursor" id="example-4">Click to load JSON data</div>
+</body>
+</html>

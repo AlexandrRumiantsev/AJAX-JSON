@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2002/REC-xhtml1-20020801/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery для начинающих. Часть 3. AJAX. Функция post</title>
+    <meta name="keywords" content="ajax, jquery, javascript, post" />
+    <meta name="description" content="jQuery library, AJAX. Post Function" />
+    <script type="text/javascript" src="javascript/jquery-1.2.6.js"></script>
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />	
+    <style>
+    body { width: 600px; margin:2px auto}    
+    </style> 
+</head>
+<body>
+         <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery('#example-3').click(function(){
+                    jQuery.post('example.xml', {}, function(xml){
+                        jQuery('#example-3').html('');
+                        jQuery(xml).find('note').each(function(){
+                            jQuery('#example-3').append('To: '   + $(this).find('to').text() + '<br/>')
+                                                .append('From: ' + $(this).find('from').text() + '<br/>')
+                                                .append('<b>'    + $(this).find('heading').text() + '</b><br/>')
+                                                .append(           $(this).find('body').text() + '<br/>');
+                        });
+                    }, 'xml');                
+                })
+            });
+        </script>   
+        <div class="example cursor" id="example-3">Click to load XML data</div>
+</body>
+</html>

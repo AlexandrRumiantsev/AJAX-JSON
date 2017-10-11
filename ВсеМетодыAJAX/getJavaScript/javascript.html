@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2002/REC-xhtml1-20020801/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery для начинающих. Часть 3. AJAX. Функция getJavaScript</title>
+    <meta name="keywords" content="ajax, jquery, javascript" />
+    <meta name="description" content="jQuery library, AJAX. getJavaScript Function" />
+    <script type="text/javascript" src="javascript/jquery-1.2.6.js"></script>
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />	
+    <style>
+    body { width: 600px; margin:2px auto}    
+    </style> 
+</head>
+<body>
+         <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery('#example-5').click(function(){
+                    jQuery.getScript('example.js', function(){
+                        testAjax();
+                    });                
+                })
+            });
+        </script>   
+        <div class="example cursor" id="example-5">Click to load and run JavaScript</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery для начинающих. Часть 3. AJAX. Функция load</title>
+    <meta name="keywords" content="ajax, jquery, javascript, yahoo" />
+    <meta name="description" content="jQuery library, AJAX. Load Function" />    
+    <script type='text/javascript' src='jquery/jquery.min.js'></script>
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />	
+    <style>
+    body { width: 600px; margin:2px auto; color:green;}    
+    </style> 
+</head>
+<body>
+         <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery('#example-1').click(function(){
+                    jQuery(this).load('example.html');                
+                }) 
+            });
+         </script>        
+        <div class="example cursor" id="example-1">Click to update</div>
+</body>
+</html>
