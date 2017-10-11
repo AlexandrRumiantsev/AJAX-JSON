@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="javascript\jquery-1.2.6.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.get("index.html", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Отправить</button>
+
+</body>
+</html>
