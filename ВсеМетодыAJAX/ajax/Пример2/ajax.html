@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="javascript\jquery-1.2.6.js""></script>
+
+<input type="text" id="txt"/>
+<input type="button" id="btn" value="Жмакни меня">
+<script>
+function someFunc(){
+//принимаю переменную с инпута
+var z = document.getElementById("txt").value;
+
+//посылаю запрос
+$.ajax({url: "demo_test.php", 
+		        type: 'POST',
+				//в запросе мою переменную закидываю в переменную name
+				data: {name:z},
+		        success: function(result){
+				alert("Данные успешно отправлены!"+ result); 
+        }});
+		
+}
+//Скрипт который срабаьывает при нажатие на кнопку
+document.getElementById("btn").onclick = someFunc;
+</script>
